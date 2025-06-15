@@ -1,0 +1,210 @@
+/* Container principal do rodapé */
+.site-footer {
+  background-color: black;
+  color: #ffffff;
+  padding: 4rem 0 0;
+  font-family: 'Arial', sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+/* Seção superior (logo + links) */
+.footer-top {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Ajuste esta proporção conforme necessário */
+  gap: 3rem;
+  align-items: start;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.footer-logo {
+  height: 70px;
+  margin-bottom: 1.5rem;
+}
+
+.footer-logo-image {
+  height: 100%;
+  width: auto;
+  max-width: 220px;
+  object-fit: contain;
+}
+
+.footer-icmc-logo {
+  height: 70px;
+  display: flex;
+  align-items: center; /* Centraliza verticalmente a imagem */
+}
+
+.footer-icmc-image {
+  height: 50%; /* Ajustado para preencher a altura do container */
+  width: auto;
+  max-width: 220px;
+  object-fit: contain;
+  object-position: left center; /* Alinha a imagem à esquerda */
+}
+
+.footer-description {
+  color: #cccccc;
+  line-height: 1.7;
+  font-size: 0.95rem;
+  padding-right: 1rem;
+}
+
+/* Seções de links - agora parte do grid principal */
+.footer-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+}
+
+/* Restante do CSS permanece igual */
+.section-title {
+  font-size: 1.3rem;
+  margin-bottom: 1.8rem;
+  color: #17BD9C;
+  position: relative;
+  padding-bottom: 0.8rem;
+}   
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(to right, #345494, #17BD9C);
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 1rem;
+}
+
+.footer-links a {
+  color: #e0e0e0;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+  color: #17BD9C;
+  transform: translateX(5px);
+}
+
+.footer-links a::after {
+  content: '→';
+  margin-left: 0.8rem;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+}
+
+.footer-links a:hover::after {
+  margin-left: 1.2rem;
+  opacity: 1;
+}
+
+/* Rodapé Inferior */
+.footer-divider {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent);
+  margin: 2rem 0;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 1.5rem 0 2rem;
+}
+
+.copyright {
+  color: #999999;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .footer-sections {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 3rem 0 0;
+  }
+  
+  .footer-sections {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .footer-brand {
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+  
+  .footer-description {
+    margin: 0 auto;
+  }
+  
+  .section-title {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    padding: 0 1.5rem;
+  }
+  
+  .footer-logo {
+    height: 60px;
+  }
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .footer-brand {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .footer-description {
+    padding-right: 0;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-sections {
+    grid-template-columns: 1fr;
+  }
+}

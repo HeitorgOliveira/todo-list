@@ -9,7 +9,7 @@ import EditProfilePage from "./pages/EditProfilePage";
 import CreateTaskPage from './pages/CreateTaskPage';
 import EditTaskPage from './pages/EditTaskPage';
 import FilterPage from './pages/FilterPage';
-import TodoListPage from './pages/ToDoListPage';
+import ToDoListPage from './pages/ToDoListPage';
 
 // Componentes
 import Header from "./components/Header";
@@ -30,14 +30,15 @@ function App() {
             <Route path="/create-task" element={<CreateTaskPage />} />
             <Route path="/edit-task" element={<EditTaskPage />} />
             <Route path="/filter" element={<FilterPage />} />
-            <Route path="/todo-list" element={<TodoListPage />} />
+            <Route path="/todo-list" element={<ToDoListPage />} />
             {/* Adicione outras rotas conforme necessário */}
           </Routes>
         </main>
         <Footer />
       </div>
     </Router>
-  );
+    
+);
 }
 
 export default App;

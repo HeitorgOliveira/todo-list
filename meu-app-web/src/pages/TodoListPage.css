@@ -1,0 +1,54 @@
+.page-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.todo-list-container {
+  flex: 1;
+  background-color: #2d3748;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.todo-tarefas-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.todo-list-button-criar {
+  padding: 0.6rem 2.0rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 18px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  background-image: linear-gradient(to right, #345494, #17BD9C);
+  color: white;
+  border: none;
+}
+.todo-list-button-criar:hover {
+  background-color: #2563eb;
+}
+
+.todo-list-button-filtrar {
+  padding: 0.6rem 2.0rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 18px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  background-image: linear-gradient(to right, #345494, #17BD9C);
+  color: #e5e7eb;
+  border: none;
+}
+.todo-list-button-filtrar:hover {
+  background-color: #6b7280;
+}
+
+todo-list-tarefas {
+    background-color: black;
+}

@@ -9,6 +9,7 @@ import EditProfilePage from "./pages/EditProfilePage";
 import CreateTaskPage from './pages/CreateTaskPage';
 import EditTaskPage from './pages/EditTaskPage';
 import FilterPage from './pages/FilterPage';
+import TodoListPage from './pages/ToDoListPage';
 
 // Componentes
 import Header from "./components/Header";
@@ -21,14 +22,15 @@ function App() {
         <Header />
         <main className="main-content">
           <Routes>
-            <Route path="/aaa" element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="/edit-profile" element={<EditProfilePage />} />
             <Route path="/create-task" element={<CreateTaskPage />} />
             <Route path="/edit-task" element={<EditTaskPage />} />
-            <Route path="/" element={<FilterPage />} />
+            <Route path="/filter" element={<FilterPage />} />
+            <Route path="/todo-list" element={<TodoListPage />} />
             {/* Adicione outras rotas conforme necessário */}
           </Routes>
         </main>

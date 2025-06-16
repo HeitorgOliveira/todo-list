@@ -1,0 +1,327 @@
+/* Estilos Gerais */
+.filter-container {
+  min-height: 100vh;
+  background-color: #000B1A;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Cabeçalho */
+.filter-header {
+  background-color: #000B1A;
+  color: white;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter-logo {
+  font-size: 1.8rem;
+  color: #17BD9C;
+  margin: 0;
+}
+
+.filter-nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.filter-nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.filter-nav-link:hover {
+  color: #17BD9C;
+}
+
+/* Card de Criar Tarefa */
+.filter-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 1rem;
+}
+
+.filter-card {
+  background-color: #081424;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 3rem;
+  width: 100%;
+  max-width: 450px;
+}
+
+.filter-title {
+  color: #000B1A;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-size: 1.8rem;
+}
+
+/* Formulário */
+.filter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  color: #f2f2f2;
+  font-weight: 500;
+}
+
+
+.form-input {
+  padding: 0.8rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #17BD9C;
+}
+
+.form-input::placeholder {
+  color: #aaa;
+}
+
+/*h1 Login*/
+.login-title {
+  color: #fff;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Botão */
+.login-button {
+  background: linear-gradient(to right, #345494, #17BD9C);
+  color: white;
+  border: none;
+  padding: 1rem;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.login-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(52, 84, 148, 0.3);
+}
+
+.cancelar-button {
+  background: linear-gradient(to right, #000000, #1b1b1b);
+  color: white;
+  border: none;
+  padding: 1rem;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.cancelar-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(52, 84, 148, 0.3);
+}
+
+
+.register-link {
+  text-align: center;
+  color: #c0c0c0; /* Cor do texto principal */
+  margin-top: 1rem;
+}
+
+.register-link a {
+  color: #d7d7d7; /* Cor do link */
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.register-link a:hover {
+  color: #17BD9C; /* Cor quando passar o mouse */
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .login-header {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .login-nav {
+    gap: 1.5rem;
+  }
+  
+  .login-card {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    padding: 1.5rem;
+  }
+  
+  .login-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* Textarea de descrição */
+.description-input {
+  min-height: 150px;
+  resize: vertical;
+}
+
+/* Grupo de botões */
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.button-group button {
+  flex: 1;
+}
+
+/* Ajustes para os títulos */
+.filter-title {
+  color: #fff !important; /* Sobrescreve o valor anterior */
+}
+
+/* Ajustes para o card */
+.filter-card {
+  max-width: 500px; /* Aumenta um pouco a largura */
+}
+
+/* Ajustes para inputs */
+.form-input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Melhorias na responsividade */
+@media (max-width: 480px) {
+  .button-group {
+    flex-direction: column;
+  }
+  
+  .filter-card {
+    padding: 2rem;
+  }
+  
+  .description-input {
+    min-height: 120px;
+  }
+}
+
+/* Estilos para as opções de filtro */
+.filter-options {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinha os itens à esquerda */
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+
+  /* Centralizar o próprio bloco */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.filter-option {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.filter-checkbox {
+  width: 20px;
+  height: 20px;
+  accent-color: #17BD9C;
+  cursor: pointer;
+}
+
+.filter-label {
+  color: #f2f2f2;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.filter-label:hover {
+  color: #17BD9C;
+}
+
+/* Ajustes para o formulário */
+.filter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Ajustes para o card */
+.filter-card {
+  max-width: 400px;
+  padding: 2.5rem;
+}
+
+/* Ajustes nos botões */
+.button-group {
+  margin-top: 1rem;
+}
+
+/* Efeito para checkboxes */
+.filter-checkbox {
+  position: relative;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #17BD9C;
+  border-radius: 4px;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.filter-checkbox:checked {
+  background-color: #17BD9C;
+}
+
+.filter-checkbox:checked::after {
+  content: "✓";
+  position: absolute;
+  color: white;
+  font-size: 14px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

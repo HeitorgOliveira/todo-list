@@ -1,0 +1,355 @@
+  /* Estilos gerais */
+
+  /* Reset de margens padrão */
+  body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .app-container {
+    background: linear-gradient(to bottom, #000B1A, #081424);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    position: relative;
+    color: white;
+    font-family: 'Arial', sans-serif;
+  }
+
+  body {
+    overflow-x: hidden; 
+  }
+
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+
+  .nav-link:hover {
+    color: #17BD9C;
+  }
+
+  .nav-link.active {
+    color: #17BD9C;
+    font-weight: 600;
+  }
+
+  .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #17BD9C;
+  }
+
+
+  /* Conteúdo principal */
+  .main-content {
+    padding: 2rem;
+  }
+
+  .content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+  }
+
+  .home-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    max-width: 600px;
+    text-align: left;
+  }
+
+  .home-content h1 {
+    font-size: 2.98rem;
+    margin-top: 5.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+  }
+
+  .home-content p {
+    font-size: 1.2rem;
+    line-height: 1.9;
+    margin-bottom: 2rem;
+    color: #ccc;
+  }
+
+  .home-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+      justify-content: center;
+  }
+
+  /* Botão CTA */
+  .cta-button {
+    background: linear-gradient(to right, #345494, #17BD9C);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(52, 84, 148, 0.3);
+  }
+
+  .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(52, 84, 148, 0.4);
+  }
+
+  .cta-button-wrapper {
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  .cta-link {
+  text-decoration: none;
+  display: inline-block;
+}
+
+  /* Imagem */
+  .home-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .platform-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Header */
+  .header-logo {
+    height: 60px;
+  }
+
+  .logo-image {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+  }
+
+/* Seção de Benefícios */
+.benefits-section {
+  padding: 5rem 2rem;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.benefits-section h2 {
+  color: white;
+  font-size: 2.5rem;
+  margin-top: 200px;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.benefits-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(to right, #345494, #17BD9C);
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 3rem auto 0;
+}
+
+.benefit-card {
+  background-color: #000B1A;
+  border-radius: 10px;
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(23, 189, 156, 0.2);
+  border-color: rgba(23, 189, 156, 0.3);
+}
+
+.benefit-icon {
+  font-size: 2.5rem;
+  color: #17BD9C;
+  margin-bottom: 1.5rem;
+  width: 80px;
+  height: 80px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.benefit-card h3 {
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.benefit-card p {
+  color: #c0c0c0;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.benefit-icon {
+  color: #17BD9C;
+  margin-bottom: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .benefits-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  
+  .benefits-section h2 {
+    font-size: 2rem;
+  }
+  
+  .benefit-card {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .benefits-section {
+    padding: 3rem 1rem;
+  }
+  
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .benefit-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+}
+
+/* Seção de Ferramentas */
+.tools-section {
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.tools-header {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+.tools-header h2 {
+  color: white;
+  font-size: 2.5rem;
+  margin-top: 150px;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+}
+
+.tools-header p {
+  color: #c0c0c0;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tool-card {
+  background-color: #000B1A;
+  border-radius: 10px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tool-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(52, 84, 148, 0.2);
+  border-color: rgba(23, 189, 156, 0.3);
+}
+
+.tool-icon {
+  color: #17BD9C;
+  margin-bottom: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tool-card h3 {
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.tool-card p {
+  color: #c0c0c0;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .tools-header h2 {
+    font-size: 2rem;
+  }
+  
+  .tools-header p {
+    font-size: 1rem;
+  }
+  
+  .tools-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tools-section {
+    padding: 3rem 1rem;
+  }
+  
+  .tools-header h2 {
+    font-size: 1.8rem;
+  }
+}

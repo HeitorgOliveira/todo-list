@@ -10,11 +10,9 @@ const ToDoListPage = () => {
     return (
         <div className="todo-list-page">
             <div className="page-layout">
-                {/* SEU PRIMEIRO CONTAINER */}
                 <div className="todo-list-container">
                     <h1>Tarefas</h1>
                     <div className="todo-tarefas-action">
-                        {/* Observação: botões não usam 'href', use o componente <Link> ou onClick */}
                         <Link style={{color: "inherit", textDecoration: "none"}} to="/create-task">
                         <button className="todo-list-button-criar">
                             Criar

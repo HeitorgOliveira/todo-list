@@ -27,7 +27,7 @@ const Profile = () => {
       </div>
       
       <div className="profile-actions">
-        <Link to="/" className="profile-button home-button">Home</Link>
+        <Link to="/todo-list" className="profile-button home-button">Home</Link>
         <Link to="/edit-profile" className="profile-button edit-button">Editar</Link>
       </div>
     </div>

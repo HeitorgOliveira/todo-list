@@ -48,10 +48,14 @@ const FilterPage = () => {
 
             <div className="button-group">
               <button type="button" className="cancelar-button">
-                Cancelar
+                <Link to="/todo-list" style={{ color: "inherit", textDecoration: "none" }}>
+                  Cancelar
+                </Link>
               </button>
               <button type="submit" className="login-button">
-                Filtrar
+                <Link to="/todo-list" style={{ color: "inherit", textDecoration: "none" }}>
+                  Filtrar →
+                </Link>
               </button>
             </div>
           </form>

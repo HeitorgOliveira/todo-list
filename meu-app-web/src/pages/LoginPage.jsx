@@ -33,7 +33,7 @@ const LoginPage = () => {
             </div>
             
             <button type="submit" className="login-button">
-              Enter →
+              <Link to="/todo-list" style={{ color: "inherit", textDecoration: "none" }}>Enter → </Link>
             </button>
 
             <p className="register-link">

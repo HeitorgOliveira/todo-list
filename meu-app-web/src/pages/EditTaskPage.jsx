@@ -41,10 +41,14 @@ const EditTaskPage = () => {
 
             <div className="button-group">
               <button type="button" className="cancelar-button">
-                Cancelar
+                <Link to="/todo-list" style={{ color: "inherit", textDecoration: "none" }}>
+                  Cancelar
+                </Link>
               </button>
               <button type="submit" className="login-button">
-                Criar
+                <Link to="/todo-list" style={{ color: "inherit", textDecoration: "none" }}>
+                  Salvar → 
+                </Link>
               </button>
             </div>
           </form>

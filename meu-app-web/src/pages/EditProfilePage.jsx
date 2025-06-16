@@ -58,7 +58,7 @@ const EditProfile = () => {
       
       <div className="profile-actions">
         <Link to="/profile" className="profile-button cancel-button">Cancelar</Link>
-        <button className="profile-button save-button">Salvar</button>
+        <Link to="/profile" className="profile-button save-button">Salvar</Link>
       </div>
     </div>
   );

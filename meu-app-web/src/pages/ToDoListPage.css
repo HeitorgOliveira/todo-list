@@ -52,3 +52,26 @@
 todo-list-tarefas {
     background-color: black;
 }
+
+/* Estilo para o novo botão de perfil */
+.todo-list-button-perfil {
+  padding: 0.6rem 2.0rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 18px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  background-image: linear-gradient(to right, #345494, #17BD9C);
+  color: #e5e7eb;
+  border: none;
+}
+
+.todo-list-button-perfil:hover {
+    background-color: #5a6268;
+}
+
+/* Ajuste o container de ações se necessário */
+.todo-tarefas-action {
+    display: flex;
+    gap: 8px; /* Espaçamento uniforme entre botões */
+}

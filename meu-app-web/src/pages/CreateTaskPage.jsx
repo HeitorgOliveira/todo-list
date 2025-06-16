@@ -42,11 +42,15 @@ const CreateTaskPage = () => {
             <div className="button-group">
               <Link to="/todo-list" style={{color: "inherit", textDecoration: "none"}}>
               <button type="button" className="cancelar-button">
-                Cancelar
+                <Link to="/todo-list" style={{ color: "inherit", textDecoration: "none" }}>
+                  Cancelar
+                </Link>
               </button>
               </Link>
               <button type="submit" className="login-button">
-                Criar
+                <Link to="/todo-list" style={{color: "inherit", textDecoration: "none"}}>
+                  Criar →
+                </Link>
               </button>
             </div>
           </form>

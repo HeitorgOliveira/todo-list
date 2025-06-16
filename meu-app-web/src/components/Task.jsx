@@ -1,5 +1,6 @@
 import React from 'react'
 import './Task.css'
+import { Link } from 'react-router-dom';
 
 const Task = () => {
   return (
@@ -8,7 +9,11 @@ const Task = () => {
         <h2 className="task-title">Relatório</h2>
         <div className="task-actions">
             <b className="task-status-ok">Enviado</b>
-            <button className="task-edit-button">Editar</button>
+            <button className="task-edit-button">
+              <Link to="/create-task" style={{ color: "inherit", textDecoration: "none" }}>
+                Editar
+              </Link>
+            </button>
             <button className="task-delete-button">Excluir</button>
         </div>
       </div>

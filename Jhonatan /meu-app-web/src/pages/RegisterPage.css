@@ -1,12 +1,12 @@
 /* Estilos Gerais */
-.login-container {
+.register-container {
   min-height: 100vh;
   background-color: #000B1A;
   font-family: 'Arial', sans-serif;
 }
 
 /* Cabeçalho */
-.login-header {
+.register-header {
   background-color: #000B1A;
   color: white;
   padding: 1.5rem 2rem;
@@ -15,37 +15,37 @@
   align-items: center;
 }
 
-.login-logo {
+.register-logo {
   font-size: 1.8rem;
   color: #17BD9C;
   margin: 0;
 }
 
-.login-nav {
+.register-nav {
   display: flex;
   gap: 2rem;
 }
 
-.login-nav-link {
+.register-nav-link {
   color: white;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
 }
 
-.login-nav-link:hover {
+.register-nav-link:hover {
   color: #17BD9C;
 }
 
-/* Card de Login */
-.login-main {
+/* Card de Registro */
+.register-main {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 4rem 1rem;
 }
 
-.login-card {
+.register-card {
   background-color: #081424;
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -54,15 +54,15 @@
   max-width: 450px;
 }
 
-.login-title {
-  color: #000B1A;
+.register-title {
+  color: #fff;
   text-align: center;
   margin-bottom: 2.5rem;
   font-size: 1.8rem;
 }
 
 /* Formulário */
-.login-form {
+.register-form {
   display: flex;
   flex-direction: column;
   gap: 1.8rem;
@@ -95,6 +95,16 @@
 .form-input::placeholder {
   color: #aaa;
 }
+/*data*/
+.form-input[type="date"] {
+  padding: 0.8rem 1rem;
+  color: #aaa;
+  border: 1px solid #ddd;
+
+}
+.form-input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
 
 /*h1 Login*/
 .login-title {
@@ -105,7 +115,7 @@
 }
 
 /* Botão */
-.login-button {
+.register-button {
   background: linear-gradient(to right, #345494, #17BD9C);
   color: white;
   border: none;
@@ -122,18 +132,18 @@
   gap: 0.5rem;
 }
 
-.login-button:hover {
+.register-button:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 10px rgba(52, 84, 148, 0.3);
 }
 
-.register-link {
+.login-link {
   text-align: center;
   color: #c0c0c0; /* Cor do texto principal */
   margin-top: 1rem;
 }
 
-.register-link a {
+.login-link a {
   color: #d7d7d7; /* Cor do link */
   text-decoration: none;
   font-weight: 600;

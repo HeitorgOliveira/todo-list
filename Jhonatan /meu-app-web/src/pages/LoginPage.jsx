@@ -35,6 +35,10 @@ const LoginPage = () => {
             <button type="submit" className="login-button">
               Enter →
             </button>
+
+            <p className="register-link">
+              Não tem uma conta? <Link to="/register">Cadastre-se</Link>
+            </p>
           </form>
         </div>
       </main>

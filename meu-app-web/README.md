@@ -1,8 +1,8 @@
 ## Comandos para rodar o site
 
-npm install react-icons
-npm install
-npm start
+- npm install react-icons
+- npm install
+- npm start
 
 ## Fazer
 

@@ -1,0 +1,13 @@
+# Todo-list
+
+Projeto voltado para auxiliar na elaboração de lista de afazeres.
+
+## Comandos para rodar o site
+
+- npm install react-icons
+- npm install
+- npm start
+
+## Git 
+
+https://github.com/HeitorgOliveira/todo-list

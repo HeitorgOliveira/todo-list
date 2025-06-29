@@ -1,17 +1,56 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./LoginPage.css";
 
 const LoginPage = () => {
+  const navigate = useNavigate();
+
+  const [form, setForm] = useState({ email: "", password: "" });
+  const [toast, setToast] = useState(null);
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.id]: e.target.value });
+  };
+
+  const showToast = (msg, ms = 3000) => {
+    setToast(msg);
+    setTimeout(() => setToast(null), ms);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const res = await fetch("http://localhost:4000/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form)
+      });
+
+      if (res.ok) {
+        const { token } = await res.json();
+        localStorage.setItem("token", token);
+        showToast("Login realizado com sucesso!");
+        setTimeout(() => navigate("/todo-list"), 1200);
+      } else {
+        const err = await res.json();
+        showToast("Erro: " + err.msg);
+      }
+    } catch (err) {
+      console.error(err);
+      showToast("Falha ao conectar ao servidor.");
+    }
+  };
+
   return (
     <div className="login-container">
+      {toast && <div className="custom-toast">{toast}</div>}
 
-      {/* Conteúdo Principal */}
       <main className="login-main">
         <div className="login-card">
           <h2 className="login-title">LOGIN</h2>
           
-          <form className="login-form">
+          <form className="login-form" onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="email" className="form-label">E-mail:</label>
               <input
@@ -19,21 +58,25 @@ const LoginPage = () => {
                 id="email"
                 className="form-input"
                 placeholder="digite aqui"
+                onChange={handleChange}
+                required
               />
             </div>
-            
+
             <div className="form-group">
-              <label htmlFor="senha" className="form-label">Senha:</label>
+              <label htmlFor="password" className="form-label">Senha:</label>
               <input
                 type="password"
-                id="senha"
+                id="password"
                 className="form-input"
                 placeholder="digite aqui"
+                onChange={handleChange}
+                required
               />
             </div>
-            
+
             <button type="submit" className="login-button">
-              <Link to="/todo-list" style={{ color: "inherit", textDecoration: "none" }}>Enter → </Link>
+              Entrar →
             </button>
 
             <p className="register-link">

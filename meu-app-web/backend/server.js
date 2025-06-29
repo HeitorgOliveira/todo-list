@@ -1,37 +1,37 @@
-// server.js
-
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
 
-// Importa as rotas
 import authRoutes from "./routes/authRoutes.js";
 import taskRoutes from "./routes/taskRoutes.js";
 
-// Carrega variáveis do .env
 dotenv.config();
 
 const app = express();
-
-// Middlewares globais
-app.use(cors());                  // permite conexões do frontend
-app.use(express.json());         // interpreta JSON no corpo das requisições
-
-// Rotas da API
-app.use("/api/auth", authRoutes);   // registro e login
-app.use("/api/tasks", taskRoutes);  // operações com tarefas
-
-// Conexão com o MongoDB
 const PORT = process.env.PORT || 4000;
 
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => {
-    console.log("Conectado ao MongoDB");
-    app.listen(PORT, () => {
-      console.log(`Servidor rodando em http://localhost:${PORT}`);
-    });
-  })
-  .catch((err) => {
-    console.error("Erro ao conectar no MongoDB:", err.message);
-  });
+// Middlewares
+app.use(cors());
+app.use(express.json());
+
+// Rotas
+app.use("/api/auth", authRoutes);
+app.use("/api/tasks", taskRoutes);
+
+// Inicia servidor 
+app.listen(PORT, () =>
+  console.log(`Servidor rodando em http://localhost:${PORT}`)
+);
+
+//Conexão opcional ao BD
+if (process.env.MONGO_URI) {
+  mongoose
+    .connect(process.env.MONGO_URI)
+    .then(() => console.log("MongoDB conectado"))
+    .catch((err) =>
+      console.error("Falha ao conectar no MongoDB:", err.message)
+    );
+} else {
+  console.warn("MONGO_URI não definido – rodando sem banco por enquanto");
+}

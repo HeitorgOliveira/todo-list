@@ -3,19 +3,21 @@ import jwt from "jsonwebtoken";
 export default function verifyToken(req, res, next) {
   const authHeader = req.headers.authorization;
 
-  // Verifica se o token está presente e começa com "Bearer "
-  if (!authHeader?.startsWith("Bearer ")) {
+  // Verifica se o header existe e se começa com "Bearer "
+  if (!authHeader || !authHeader.startsWith("Bearer ")) {
     return res.status(401).json({ msg: "Token ausente" });
   }
 
   const token = authHeader.split(" ")[1];
 
-  // Simulação: aceita o token "fake.jwt.token" sem verificação
-  if (token === "fake.jwt.token") {
-    req.user = { id: "usuario_simulado", email: "teste@email.com" };
-    return next();
-  }
+  try {
+    // Decodifica e valida a assinatura do token
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-  // Se não estiver em modo simulado, rejeita
-  return res.status(401).json({ msg: "Token inválido ou expirado (simulado)" });
+    // Anexa dados do usuário para uso nas rotas seguintes
+    req.user = { id: decoded.id, email: decoded.email };
+    next();
+  } catch (err) {
+    return res.status(401).json({ msg: "Token inválido ou expirado" });
+  }
 }

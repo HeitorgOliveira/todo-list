@@ -1,30 +1,30 @@
-// models/Task.js
 import mongoose from "mongoose";
 
-// Schema define a “forma” do documento Task dentro do MongoDB
+// Esquema da Task no MongoDB
 const taskSchema = new mongoose.Schema(
   {
     owner: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "User",          // faz relação com o modelo User
+      ref: "User",
       required: true
     },
     title: {
       type: String,
       required: true
     },
-    description: String,     // opcional
+    description: String,
     status: {
       type: String,
-      enum: ["pendente", "em_andamento", "concluida", "atrasada"],
+      enum: ["pendente", "enviado", "concluída"],
       default: "pendente"
     },
-    dueDate: Date            // data de conclusão esperada
+    dueDate: Date
   },
   {
-    timestamps: true         // cria automaticamente createdAt e updatedAt
+    timestamps: true
   }
 );
 
-// Exporta o modelo para ser usado nos controllers
+
+// Exporta o modelo
 export default mongoose.model("Task", taskSchema);

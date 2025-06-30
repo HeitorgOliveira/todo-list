@@ -1,23 +1,26 @@
 import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
 
-//estrutura do usuário
-const userSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  birthDate: { type: Date },
-  cpf: { type: String },
-  email: { type: String, required: true, unique: true },
-  password: { type: String, required: true }
-});
+// Esquema do Usuário
+const userSchema = new mongoose.Schema(
+  {
+    name:       { type: String, required: true },
+    birthDate:  { type: Date },
+    cpf:        { type: String },
+    email:      { type: String, required: true, unique: true },
+    password:   { type: String, required: true, select: false }  // select:false para não vir por padrão
+  },
+  { timestamps: true } // cria createdAt / updatedAt
+);
 
-// Antes de salvar o usuário, criptografa a senha
+// Hash da senha antes de salvar (somente se for modificada)
 userSchema.pre("save", async function (next) {
-  if (!this.isModified("password")) return next(); // só se a senha foi alterada
-  this.password = await bcrypt.hash(this.password, 10); // 10 = salt rounds
+  if (!this.isModified("password")) return next();
+  this.password = await bcrypt.hash(this.password, 10); // 10 salt rounds
   next();
 });
 
-// Método para comparar senha digitada com a senha salva
+// Compara a senha digitada com o hash salvo
 userSchema.methods.matchPassword = function (senhaDigitada) {
   return bcrypt.compare(senhaDigitada, this.password);
 };
